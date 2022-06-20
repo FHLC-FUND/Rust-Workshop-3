@@ -1,29 +1,30 @@
+use std::io;
 #[warn(dead_code)]
 #[warn(non_snake_case)]
-use std::io;
+// Sườn thông tin cho mọi người dễ làm
 fn main() {
     //Vec
-    let mut _softmark:Vec<char> = Vec::new();
-    let mut _mark:Vec<char> = Vec::new();
+    let mut _softmark:Vec<String> = Vec::new();
+    let mut _mark:Vec<String> = Vec::new();
     let mut _name:Vec<String> = Vec::new();
     let mut _findname:Vec<String> = Vec::new();
     //Add Data
     let _data0 = add("Bob", 4);
     _name.push("Bob".to_string());
-    _softmark.push('4');
-    _mark.push('4');
+    _softmark.push("4".to_string());
+    _mark.push("4".to_string());
     _softmark.sort();
 
     let _data1 = add("Alice", 4);
     _name.push("Alice".to_string());
-    _softmark.push('4');
-    _mark.push('4');
+    _softmark.push("4".to_string());
+    _mark.push("4".to_string());
     _softmark.sort();
 
     let _data2 = add("Tom", 5);
     _name.push("Tom".to_string());
-    _softmark.push('5');
-    _mark.push('5');
+    _softmark.push("5".to_string());
+    _mark.push("5".to_string());
     _softmark.sort();
 
     //Search (Case 2)
@@ -53,17 +54,17 @@ fn main() {
         io::stdin().read_line(&mut line).unwrap();
     
     let mut index = 0;
+    let ids = _name.len() - 1;
     loop{
-        if index >= id {
+        if index > ids {
             println!("{:?}", _findname);
             break;
         }
         else {
-            if _findname[index] != line{
+            if _mark[index] != line{ index += 1 }
+            else {
+                _findname.push((_name[index]).to_string());
                 index += 1;
-            }
-            else{
-                _findname.push(_name[index]);
             }
         }
     }
