@@ -1,7 +1,6 @@
-use std::io;
 #[warn(dead_code)]
 #[warn(non_snake_case)]
-// Sườn thông tin cho mọi người dễ làm
+use std::io;
 fn main() {
     //Vec
     let mut _softmark:Vec<char> = Vec::new();
@@ -85,7 +84,4 @@ impl School {
     pub fn new(agee: u32, student: String) -> Self {
         Self{ name: student, mark: agee}
     }
-    // fn get_mark(&self) -> &String {
-    //     &self.name
-    // }
 }
